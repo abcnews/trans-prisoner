@@ -1,0 +1,26 @@
+{
+  "name": "2020-trans-prisoner",
+  "version": "1.0.0-pre",
+  "description": "Parallax website with animated comic style illustrations",
+  "license": "MIT",
+  "private": true,
+  "contributors": [
+    "Katia Shatoba <shatoba.katia@abc.net.au>"
+  ],
+  "aunty": {
+    "type": "basic"
+  },
+  "scripts": {
+    "start": "aunty serve",
+    "test": "aunty test"
+  },
+  "devDependencies": {
+    "@abcnews/aunty": "^10.9.1"
+  },
+  "dependencies": {
+    "alternating-case-to-object": "^1.0.1",
+    "classnames": "^2.2.6",
+    "eases": "^1.0.8",
+    "parse-unit": "^1.0.1"
+  }
+}
