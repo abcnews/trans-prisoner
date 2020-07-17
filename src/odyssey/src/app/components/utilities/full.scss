@@ -1,0 +1,34 @@
+@import '../../../constants';
+
+.u-layout > .u-full,
+[class*='u-richtext'] > .u-full {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  margin-left: calc(-50vw + 50%) !important;
+  margin-left: calc(-50vw + (var(--scrollbar-width, 0px) / 2) + 50%) !important;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100vw;
+  width: calc(100vw - var(--scrollbar-width, 0px));
+
+  @media #{$mq-gt-md} {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+
+  &:first-child,
+  a[name]:first-child + & {
+    margin-top: 0;
+  }
+}
+
+.u-layout > .u-full:not(.Gallery) + .u-full:not(.Gallery),
+.u-layout > .u-full:not(.Gallery) + a[name] + .u-full:not(.Gallery),
+[class*='u-richtext'] > .u-full:not(.Gallery) + .u-full:not(.Gallery),
+[class*='u-richtext'] > .u-full:not(.Gallery) + a[name] + .u-full:not(.Gallery) {
+  margin-top: -2rem;
+
+  @media #{$mq-gt-md} {
+    margin-top: -3rem;
+  }
+}

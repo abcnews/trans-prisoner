@@ -1,0 +1,7 @@
+@import '../../../constants';
+
+@media #{$mq-gt-sm} {
+  .u-quote {
+    text-indent: -0.4em;
+  }
+}
