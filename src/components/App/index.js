@@ -2,10 +2,10 @@ import styles from './styles.scss';
 
 import classnames from 'classnames';
 import { animate } from './animate';
-import alternatingCaseToObject from 'alternating-case-to-object';
+import acto from '@abcnews/alternating-case-to-object';
 
 import anchors from '../../odyssey/src/app/utils/anchors';
-
+import { selectMounts, isMount } from "@abcnews/mount-utils";
 
 const text = {
   frame1: '<p id="hardcoded">It’s 2018. I’m a woman in a men’s prison - why am I here?</p>',
@@ -60,27 +60,41 @@ export default function App({ projectName, env }) {
 }
 
 function getText() {
-  const a = anchors.getSections([
-    'slide'
-  ]).forEach((slide, index) => {
-    const paras = slide && slide.betweenNodes;
 
-    const config = alternatingCaseToObject(slide.configSC);
+
+  selectMounts('slide').forEach((slide, index) => {
+    // const paras = slide && slide.betweenNodes;
+    // console.log(slide);
+
+    const panels = [];
+    let contentEl = slide.nextElementSibling;
+    let hasMoreContent = true;
+    while (hasMoreContent && contentEl) {
+      if (isMount(contentEl, `endslide`, true)) {
+        hasMoreContent = false;
+      } else {
+        panels.push(contentEl);
+        contentEl = contentEl.nextElementSibling;
+      }
+    }
+
+    const config = acto(slide.getAttribute('id'));
+
     const frameText = config.text ? `frame${config.frame}_${config.text}` : `frame${config.frame}`;
 
-    if (frameText && paras.length > 0) {
+    if (frameText && panels.length > 0) {
       const frameTextEl = document.querySelector(`[data-text="${frameText}"]`)
       if (frameTextEl) {
         frameTextEl.innerHTML = '';
-        for (var i = 0; i < paras.length; i++) {
-          const para = paras[i];
+        for (var i = 0; i < panels.length; i++) {
+          const para = panels[i];
           frameTextEl.appendChild(para.cloneNode(true));
         }
       }
     }
 
-    for (var i = 0; i < paras.length; i++) {
-      const para = paras[i];
+    for (var i = 0; i < panels.length; i++) {
+      const para = panels[i];
       // remove from dom
       para.parentNode.removeChild(para);
     }
@@ -692,6 +706,11 @@ function getDom(getUrl) {
 }
 
 function getImgUrl(img, env) {
-  return `./imgs/${img}`;
+  if (env === 'dev') {
+    return `./imgs/${img}`;
+  } else {
+    return `https://www.abc.net.au/res/sites/news-projects/2020-trans-prisoner/1.0.5/imgs/${img}`;
+  }
 }
+
 
