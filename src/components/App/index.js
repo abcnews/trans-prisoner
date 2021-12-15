@@ -44,10 +44,6 @@ const text = {
 
 export default function App({ projectName, env }) {
 
-  window.onload = function () {
-    getText();
-  };
-
   this.el = document.createElement('div');
   this.el.className = styles.root;
 
@@ -56,16 +52,16 @@ export default function App({ projectName, env }) {
   this.el.innerHTML = getDom(getUrl);
 
   // Needs timeout after innerHTML so that layout can be calculated properly for animations
-  setTimeout(() => animate(), 300)
+  setTimeout(() => { 
+    getText();
+    animate();
+  }, 500)
 }
 
 function getText() {
 
 
   selectMounts('slide').forEach((slide, index) => {
-    // const paras = slide && slide.betweenNodes;
-    // console.log(slide);
-
     const panels = [];
     let contentEl = slide.nextElementSibling;
     let hasMoreContent = true;
@@ -79,9 +75,7 @@ function getText() {
     }
 
     const config = acto(slide.getAttribute('id'));
-
     const frameText = config.text ? `frame${config.frame}_${config.text}` : `frame${config.frame}`;
-
     if (frameText && panels.length > 0) {
       const frameTextEl = document.querySelector(`[data-text="${frameText}"]`)
       if (frameTextEl) {
@@ -89,14 +83,9 @@ function getText() {
         for (var i = 0; i < panels.length; i++) {
           const para = panels[i];
           frameTextEl.appendChild(para.cloneNode(true));
+          para.parentNode.removeChild(para);
         }
       }
-    }
-
-    for (var i = 0; i < panels.length; i++) {
-      const para = panels[i];
-      // remove from dom
-      para.parentNode.removeChild(para);
     }
   })
 }
