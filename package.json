@@ -1,6 +1,6 @@
 {
   "name": "2020-trans-prisoner",
-  "version": "pl-1.0.5",
+  "version": "pl-2.0.0",
   "description": "Parallax website with animated comic style illustrations",
   "license": "MIT",
   "private": true,
@@ -15,13 +15,13 @@
     "test": "aunty test"
   },
   "devDependencies": {
-    "@abcnews/aunty": "^10.9.1"
+    "@abcnews/aunty": "^12.1.3"
   },
   "dependencies": {
     "@abcnews/alternating-case-to-object": "^3.0.2",
     "@abcnews/env-utils": "^3.0.0",
     "@abcnews/mount-utils": "^2.0.0",
-    "classnames": "^2.2.6",
+    "classnames": "^2.3.1",
     "eases": "^1.0.8",
     "parse-unit": "^1.0.1"
   }
