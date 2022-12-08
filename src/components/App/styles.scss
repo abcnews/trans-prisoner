@@ -1,15 +1,14 @@
-html, body {
+html,
+body {
   margin: 0;
 }
 
-$baseUrl: 'https://www.abc.net.au/res/sites/news-projects/2020-trans-prisoner/1.0.5/';
-
 @font-face {
-  font-family: 'Samuel7-Regular';
-  src: url('#{$baseUrl}/font/Samuel7-Regular.eot?#iefix') format('embedded-opentype'),  
-       url('#{$baseUrl}/font/Samuel7-Regular.woff') format('woff'), 
-       url('#{$baseUrl}/font/Samuel7-Regular.ttf')  format('truetype'), 
-       url('#{$baseUrl}/font/Samuel7-Regular.svg#Samuel2-Regular') format('svg');
+  font-family: "Samuel7-Regular";
+  src: url("./font/Samuel7-Regular.eot?#iefix") format("embedded-opentype"),
+    url("./font/Samuel7-Regular.woff") format("woff"),
+    url("./font/Samuel7-Regular.ttf") format("truetype"),
+    url("./font/Samuel7-Regular.svg#Samuel2-Regular") format("svg");
   font-weight: normal;
   font-style: normal;
 }
@@ -40,18 +39,23 @@ h1 {
   max-width: 770px;
   margin: 0 auto;
   font-weight: normal !important;
+  font-family: "Samuel7-Regular" !important;
+  text-transform: uppercase !important;
 
-  
   @media (max-width: $breakpointSmall) {
     font-size: 45px !important;
     line-height: 51px !important;
   }
 }
 
+h1::after {
+  content: none !important;
+}
+
 .main {
   background-color: #000;
 
-  font-family: 'Samuel7-Regular';
+  font-family: "Samuel7-Regular";
   text-transform: uppercase;
   font-size: 30px;
   line-height: 37px;
@@ -68,7 +72,7 @@ h1 {
   }
 
   p {
-    font-family: 'Samuel7-Regular';
+    font-family: "Samuel7-Regular";
     text-transform: uppercase;
     font-size: 30px;
     line-height: 37px;
@@ -103,7 +107,7 @@ div {
   &.sticky {
     position: absolute;
     height: 100vh;
-    
+
     &.stickyDuring {
       position: fixed;
     }
@@ -114,13 +118,13 @@ div {
     top: 0;
     left: 0;
   }
-  
+
   &.stickyDuring {
     position: fixed;
     top: 0;
     left: 0;
   }
-  
+
   &.stickyAfter {
     position: absolute;
     bottom: 0;
@@ -136,7 +140,8 @@ div {
   min-height: 100vh;
 }
 
-.main, .section {
+.main,
+.section {
   position: relative;
   width: 100%;
 }
@@ -155,7 +160,7 @@ div {
 }
 
 .lightOverlay {
-  background-color: #E9F1F6;
+  background-color: #e9f1f6;
   opacity: 0.01;
 
   transition: 0.5s opacity ease-in-out;
@@ -174,7 +179,7 @@ div {
   }
 }
 
-/** 
+/**
  * Text container
  */
 
@@ -198,7 +203,6 @@ div {
   }
 
   &.inCloud {
-
     p {
       margin: 0;
     }
@@ -211,9 +215,9 @@ div {
       max-width: 634px;
       margin: 0 auto;
 
-      box-shadow: 20px 38px 34px -26px hsla(0,0%,0%,.2);
+      box-shadow: 20px 38px 34px -26px hsla(0, 0%, 0%, 0.2);
       border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
-      border:solid 2px #41403E;
+      border: solid 2px #41403e;
 
       @media (max-width: $breakpointSmall) {
         width: 90%;
@@ -253,10 +257,10 @@ div {
       padding-top: 0;
       height: 100vh;
     }
-  }  
+  }
 }
 
-/** 
+/**
  * Text container end
  */
 
@@ -295,13 +299,13 @@ div {
   .textContainer {
     width: 50%;
     box-sizing: border-box;
-    
+
     display: flex;
     align-items: center;
     justify-content: flex-end;
 
     z-index: 9;
-    
+
     @media (max-width: $breakpointSmall) {
       justify-content: center;
       padding: 0 0 20%;
@@ -337,7 +341,7 @@ div {
       .imagesContainer {
         order: 0;
       }
-  
+
       .textContainer {
         order: 1;
       }
@@ -386,7 +390,7 @@ div {
 }
 
 .textBlockBg {
-  font-family: ABCSerif,Book Antiqua,Palatino Linotype,Palatino,serif;
+  font-family: ABCSerif, Book Antiqua, Palatino Linotype, Palatino, serif;
   text-transform: none;
   font-size: 20px;
   line-height: 35px;
@@ -416,11 +420,10 @@ div {
   margin: 0 auto;
   height: auto;
   position: relative;
-  
-  
+
   display: flex;
   flex-direction: column;
-  
+
   @media (max-width: $breakpointSmall) {
     width: 100%;
     padding: 0 0 20%;
@@ -428,15 +431,14 @@ div {
 
   .textContainer {
     z-index: 9;
-    
+
     padding: 0% 0;
-    
+
     width: 67%;
 
     margin: 0 auto;
 
     @media (max-width: $breakpointSmall) {
-
       width: 90%;
       padding: 0;
       margin: 0 auto;
@@ -444,12 +446,11 @@ div {
   }
 
   &.scene11 {
-
     .image {
       padding-bottom: 53%;
 
       @media (max-width: $breakpointSmall) {
-        width: 90%
+        width: 90%;
       }
     }
 
@@ -477,7 +478,8 @@ div {
     }
   }
 
-  &.scene4, &.scene11 {
+  &.scene4,
+  &.scene11 {
     .panelContainer.last {
       padding: 3% 0 3%;
     }
@@ -498,8 +500,7 @@ div {
     .textContainer {
       width: 52%;
       align-self: center;
-      
-  
+
       &.second {
         margin-left: 37%;
         @media (max-width: $breakpointSmall) {
@@ -522,7 +523,7 @@ div {
       left: -32%;
       opacity: 0.99;
 
-      transition: opacity .4s ease-out;
+      transition: opacity 0.4s ease-out;
 
       @media (max-width: $breakpointSmall) {
         width: 62%;
@@ -551,7 +552,7 @@ div {
 
     &.small {
       width: 77%;
-      
+
       @media (max-width: $breakpointSmall) {
         width: 100%;
       }
@@ -617,31 +618,28 @@ div {
     width: 23%;
 
     will-change: opacity;
-    transition: opacity .2s ease-out;
+    transition: opacity 0.2s ease-out;
   }
 }
-
 
 /**
  * Section custom styling
  */
 
- .noAnimations {
-   .section1 {
-     .bg {
-       position: absolute;
-     }
+.noAnimations {
+  .section1 {
+    .bg {
+      position: absolute;
+    }
 
-     .mara {
+    .mara {
       left: 37%;
-     }
-   }
- }
+    }
+  }
+}
 
 .section1 {
-
   .scene1 {
-
     position: relative;
     z-index: 7;
 
@@ -652,7 +650,7 @@ div {
 
     transform: translateY(var(--out-transform)) translateZ(0);
     will-change: transform;
-    
+
     width: 100%;
     height: 100%;
   }
@@ -662,7 +660,7 @@ div {
   }
 
   .bg {
-    background-image: url("#{$baseUrl}/imgs/bg-dark.jpg");
+    background-image: url("./imgs/bg-dark.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -681,8 +679,7 @@ div {
     padding: 0 30px;
     box-sizing: border-box;
 
-
-    background-image: url("#{$baseUrl}/imgs/s1-bars.png");
+    background-image: url("./imgs/s1-bars.png");
     background-size: auto 100%;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -690,7 +687,7 @@ div {
     @media (max-width: $breakpointSmall) {
       padding: 0;
       background-size: 100% 100%;
-      background-image: url("#{$baseUrl}/imgs/s1-bars-mobile.png");
+      background-image: url("./imgs/s1-bars-mobile.png");
     }
 
     img {
@@ -714,7 +711,7 @@ div {
     justify-content: center;
     align-items: flex-end;
 
-    background-image: url("#{$baseUrl}/imgs/s1-prisoners.png");
+    background-image: url("./imgs/s1-prisoners.png");
     background-size: 100% auto;
     background-position: center bottom;
     background-repeat: no-repeat;
@@ -723,7 +720,7 @@ div {
       width: 125%;
       left: -17%;
 
-      background-image: url("#{$baseUrl}/imgs/s1-prisoners-mobile.png");
+      background-image: url("./imgs/s1-prisoners-mobile.png");
     }
 
     img {
@@ -762,12 +759,11 @@ div {
       --in-opacity: 0;
       opacity: var(--in-opacity);
       will-change: opacity;
-      transition: opacity .2s ease-in;
+      transition: opacity 0.2s ease-in;
     }
   }
 
   .inCloud {
-  
     .text {
       max-width: 412px;
       padding: 24px 36px;
@@ -777,7 +773,6 @@ div {
         padding: 17px 21px;
       }
     }
-    
   }
 }
 
@@ -789,7 +784,9 @@ div {
     background: none;
   }
 
- &.section6, &.section3, &.section8 {
+  &.section6,
+  &.section3,
+  &.section8 {
     padding-top: 0%;
     margin-top: 6%;
   }
@@ -807,22 +804,24 @@ div {
     background: #fff;
   }
 
-  &.section2, &.section4, &.section7, &.section9 {
+  &.section2,
+  &.section4,
+  &.section7,
+  &.section9 {
     @media (max-width: $breakpointSmall) {
       padding-top: 30%;
     }
   }
 }
 
-
 .scene2 {
   .frame {
-    background-image: url("#{$baseUrl}/imgs/bg-dark.jpg");
+    background-image: url("./imgs/bg-dark.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
 
-   > .hands {
+    > .hands {
       top: -10%;
       height: 120%;
 
@@ -848,9 +847,7 @@ div {
 }
 
 .scene3 {
-
   .wall {
-
     img {
       height: 100%;
       max-height: 100%;
@@ -919,7 +916,7 @@ div {
         height: 100%;
         max-width: none;
       }
-      
+
       &.row2 {
         top: 24%;
         height: 27%;
@@ -944,7 +941,6 @@ div {
 }
 
 .scene8 {
-
   position: relative;
   z-index: 9;
 
@@ -1003,9 +999,7 @@ div {
   }
 
   .cloudsContainer {
-
     > div {
-
       height: 50%;
       position: absolute;
 
@@ -1020,10 +1014,11 @@ div {
       }
     }
 
-    .cloudLeftDark, .cloudLeftLight {
+    .cloudLeftDark,
+    .cloudLeftLight {
       justify-content: flex-end;
     }
-    
+
     .cloudLeftDark {
       height: 52%;
       top: 1%;
@@ -1034,7 +1029,6 @@ div {
         width: 90%;
       }
     }
-
 
     .cloudLeftLight {
       height: 51%;
@@ -1047,7 +1041,8 @@ div {
       }
     }
 
-    .cloudRightDark, .cloudRightLight {
+    .cloudRightDark,
+    .cloudRightLight {
       justify-content: flex-start;
     }
 
@@ -1087,35 +1082,33 @@ div {
 
   .frame {
     > .person {
-        left: 35%;
-        bottom: -2%;
-        top: auto;
-        display: flex;
-        align-items: flex-end;
+      left: 35%;
+      bottom: -2%;
+      top: auto;
+      display: flex;
+      align-items: flex-end;
 
-        &.pre {
-          width: 35.5%;
-        }
+      &.pre {
+        width: 35.5%;
+      }
 
-        &.girl {
-          width: 31%;
-          left: 23%;
-          opacity: 0.8;
+      &.girl {
+        width: 31%;
+        left: 23%;
+        opacity: 0.8;
 
-          transform: translateX(var(--transformX)) translateZ(0);
-          will-change: transform, opacity;
-        }
+        transform: translateX(var(--transformX)) translateZ(0);
+        will-change: transform, opacity;
+      }
     }
   }
-
 }
 
 .scene10 {
-
   img {
     width: 100%;
   }
-  
+
   .frame {
     background-size: cover;
     background-position: center center;
@@ -1147,7 +1140,6 @@ div {
 
 .scene12 {
   .frame {
-
     > .maraXavier {
       width: 125%;
       left: -21%;
@@ -1157,7 +1149,7 @@ div {
       justify-content: flex-end;
     }
 
-    >.shelf {
+    > .shelf {
       display: flex;
       align-items: center;
     }
@@ -1169,7 +1161,6 @@ div {
 }
 
 .scene13 {
-
   .mobileOnly {
     display: none;
     @media (max-width: $breakpointSmall) {
@@ -1218,12 +1209,11 @@ div {
 }
 
 .scene15 {
-
   .frame {
     background: #000;
     overflow: initial;
-   
-    > .dreamBubble{
+
+    > .dreamBubble {
       @media (max-width: $breakpointSmall) {
         left: 5%;
         width: 130%;
@@ -1243,14 +1233,13 @@ div {
   }
 }
 
-.scene16 { 
+.scene16 {
   .frame {
-    
-    background-image: url("#{$baseUrl}/imgs/bg-dark.jpg");
+    background-image: url("./imgs/bg-dark.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
-    
+
     > .mara {
       top: auto;
       height: auto;
@@ -1265,11 +1254,10 @@ div {
   overflow: hidden;
 
   .bg {
-    // background-image: url("#{$baseUrl}/imgs/s17-bg.jpg");
+    background-image: url("./imgs/s17-bg.jpg");
     background-size: cover;
-    background-position: center center; 
+    background-position: center center;
     background-repeat: no-repeat;
-    
 
     width: 110%;
     height: 110%;
@@ -1283,7 +1271,7 @@ div {
 
   .maraContainer {
     position: absolute;
-    top: 0; 
+    top: 0;
     left: 0;
     display: flex;
     align-items: center;
@@ -1355,14 +1343,14 @@ div {
 }
 
 .noAnimations {
-  div, img {
+  div,
+  img {
     flex-shrink: 0;
   }
 }
 
 .scene19 {
   .frame {
-
     .bg {
       width: 132%;
       height: 132%;
@@ -1370,7 +1358,10 @@ div {
       left: -16%;
     }
 
-    > .shadow1, .shadow2, .shadow3, .shadow4 {
+    > .shadow1,
+    .shadow2,
+    .shadow3,
+    .shadow4 {
       height: auto;
       left: auto;
       opacity: 0.8;
@@ -1402,7 +1393,7 @@ div {
 
 .scene20 {
   .full {
-    background-image: url("#{$baseUrl}/imgs/bg-dark.jpg");
+    background-image: url("./imgs/bg-dark.jpg");
     background-size: cover;
     background-position: center center;
     background-repeat: no-repeat;
@@ -1421,7 +1412,7 @@ div {
 
     @media (min-aspect-ratio: 1/1) {
       height: 90%;
-    } 
+    }
   }
 
   .maraContainer {
@@ -1444,7 +1435,8 @@ div {
       height: 100%;
       will-change: transform;
 
-      &.mara1, &.mara6 {
+      &.mara1,
+      &.mara6 {
         @media (max-width: $breakpointSmall) {
           display: none;
         }
@@ -1457,11 +1449,11 @@ div {
       > img {
         width: auto;
         height: 100%;
-        
+
         @media (max-aspect-ratio: 1/1) {
           width: 100%;
           height: auto;
-        } 
+        }
       }
     }
   }
